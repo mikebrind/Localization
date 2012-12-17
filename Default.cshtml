@@ -1,0 +1,12 @@
+﻿@using Resources;
+@{
+    var db = Database.Open("Localization");
+    var sql = "SELECT Content FROM Content WHERE Section = 'Default' AND Culture = @0";
+    var content = db.QueryValue(sql, Culture);
+}
+<h1>@TestResource.Welcome</h1>
+<p><img src="images/@TestResource.FlagImage" /></p>
+<p>@TestResource.Intro</p>
+<p>@content</p>
+<p>Currency: @(10000.ToString("c"))</p>
+<p>Date: @DateTime.Now</p>

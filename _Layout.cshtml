@@ -1,0 +1,24 @@
+﻿@using Resources;
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <div>
+            <form method="post">
+                @TestResource.SelectLanguage
+                <select name="lang">
+                    <option></option>
+                    <option value="en-GB" @(Culture == "en-GB" ? "selected=\"selected\"" : "")>English</option>
+                    <option value="fr-FR" @(Culture == "fr-FR" ? "selected=\"selected\"" : "")>French</option>
+                    <option value="de-DE" @(Culture == "de-DE" ? "selected=\"selected\"" : "")>German</option>
+                </select>
+                <input type="submit" value="@TestResource.Submit" />
+            </form>
+        </div>
+        @RenderBody()
+    </body>
+</html>

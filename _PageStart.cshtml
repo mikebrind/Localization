@@ -1,0 +1,6 @@
+﻿@{
+    Layout = "~/_Layout.cshtml";
+    if(!Request["lang"].IsEmpty()){
+        Culture = UICulture = Request["lang"];
+    }
+}
